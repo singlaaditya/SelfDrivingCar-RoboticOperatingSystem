@@ -13,7 +13,7 @@ class Controller(object):
         # TODO: Implement
         self.throttle_controller = PID(kp=0.3, ki=0.1, kd=0, mn=0, mx=0.2)
         #self.throttle_controller = PID(kp=0.3, ki=0.003, kd=4.0)
-        self.yaw_controller = YawController(wheel_base, steer_ratio, 0.2, max_lat_accel, max_steer_angle)
+        self.yaw_controller = YawController(wheel_base, steer_ratio, ONE_MPH, max_lat_accel, max_steer_angle)
         self.vel_lpf = LowPassFilter(0.5, 0.02)
         self.vehicle_mass = vehicle_mass
         self.brake_deadband = brake_deadband
